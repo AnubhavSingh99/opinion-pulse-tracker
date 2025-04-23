@@ -1,73 +1,59 @@
-# Welcome to your Lovable project
 
-## Project info
+# Customer Feedback Management System
 
-**URL**: https://lovable.dev/projects/3e479f23-eb4b-41cf-b164-d68cde887be7
+A comprehensive application for collecting, managing, and analyzing customer feedback with a React frontend and MongoDB backend structure.
 
-## How can I edit this code?
+## Project Overview
 
-There are several ways of editing your application.
+This project provides a platform for businesses to:
+- Collect structured feedback from customers
+- Visualize feedback metrics on a dashboard
+- Manage and respond to feedback items
+- Analyze sentiment and trends
 
-**Use Lovable**
+## Project Structure
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/3e479f23-eb4b-41cf-b164-d68cde887be7) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```
+project/
+├── src/                     # React frontend code
+│   ├── components/
+│   │   └── feedback/        # Feedback-specific components
+│   └── pages/
+│       └── Index.tsx        # Main application page
+│
+└── backend/                 # Express/MongoDB backend code
+    ├── models/              # MongoDB schemas
+    ├── routes/              # API route definitions
+    └── server.js            # Server entry point
 ```
 
-**Edit a file directly in GitHub**
+## Features
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- **Dashboard Overview**: Visualize feedback metrics and sentiment analysis
+- **Feedback Management**: List, filter, and search through feedback items
+- **Feedback Submission**: User-friendly form for submitting new feedback
+- **Status Tracking**: Track feedback items through their lifecycle
 
-**Use GitHub Codespaces**
+## Technology Stack
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+- **Frontend**: React, TypeScript, TailwindCSS, shadcn/ui
+- **Backend**: Node.js, Express.js (template structure)
+- **Database**: MongoDB (template structure)
 
-## What technologies are used for this project?
+## Getting Started
 
-This project is built with:
+1. Clone this repository
+2. Install frontend dependencies: `npm install`
+3. Start the frontend: `npm run dev`
+4. For backend implementation, connect to Supabase via the Lovable integration
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Next Steps
 
-## How can I deploy this project?
+To implement a working MongoDB backend:
+1. Connect your Lovable project to Supabase using the native integration
+2. Set up MongoDB connection through Supabase edge functions
+3. Implement the API endpoints defined in the backend templates
 
-Simply open [Lovable](https://lovable.dev/projects/3e479f23-eb4b-41cf-b164-d68cde887be7) and click on Share -> Publish.
+## License
 
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+MIT

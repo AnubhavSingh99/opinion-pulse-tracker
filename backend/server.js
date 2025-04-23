@@ -1,26 +1,8 @@
-
-// This file would handle our Express server setup
-// Note: This is just a template since we can't connect to MongoDB without Supabase integration
-
-/**
- * Express Server for Customer Feedback Management System
- * 
- * This server would handle:
- * - API endpoints for feedback submission, retrieval, and management
- * - Authentication and authorization
- * - Connection to MongoDB database
- * - Data validation and processing
- */
-
-/*
-// Example server code (commented out as we can't actually use it yet)
-
 const express = require('express');
 const cors = require('cors');
-const mongoose = require('mongoose');
+// We'll keep the MongoDB code commented for now since we can't connect without Supabase integration
+// const mongoose = require('mongoose');
 const dotenv = require('dotenv');
-const feedbackRoutes = require('./routes/feedback');
-const userRoutes = require('./routes/users');
 
 // Load environment variables
 dotenv.config();
@@ -31,19 +13,33 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Routes
-app.use('/api/feedback', feedbackRoutes);
-app.use('/api/users', userRoutes);
+// Basic route for testing
+app.get('/', (req, res) => {
+  res.json({ message: "Welcome to Customer Feedback Management API!" });
+});
 
-// Connect to MongoDB
-mongoose.connect(process.env.MONGO_URI)
-  .then(() => console.log('Connected to MongoDB'))
-  .catch(err => console.error('Could not connect to MongoDB', err));
+// Feedback routes (basic implementation without MongoDB)
+app.get('/api/feedback', (req, res) => {
+  res.json({ 
+    message: "This would return feedback items from MongoDB",
+    items: [
+      { id: 1, name: "John Doe", email: "john@example.com", category: "feature", feedback: "I love this app!", rating: 5, status: "pending", createdAt: new Date() },
+      { id: 2, name: "Jane Smith", email: "jane@example.com", category: "bug", feedback: "The app crashes when I click submit.", rating: 2, status: "in-progress", createdAt: new Date() }
+    ]
+  });
+});
+
+app.post('/api/feedback', (req, res) => {
+  res.status(201).json({ 
+    message: "Feedback saved successfully (simulation)",
+    item: { ...req.body, id: Date.now(), createdAt: new Date(), status: "pending" }
+  });
+});
 
 // Start server
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-*/
-
-console.log("Backend server template for Customer Feedback Management System");
-console.log("To implement a working backend, connect Lovable to Supabase");
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+  console.log(`Visit http://localhost:${PORT} to test the API`);
+  console.log("To implement a working backend with MongoDB, connect Lovable to Supabase");
+});
